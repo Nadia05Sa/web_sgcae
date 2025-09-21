@@ -1,0 +1,47 @@
+.menu-recepcion {
+  margin-top: 2rem;
+  padding-inline: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.menu-conteiner-titulo {
+  border-radius: 15px;
+  padding: 1rem;
+  width: 30vw;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.menu-titulo {
+  font-weight: bold;
+  color: #ECAE28;
+}
+
+.menu-container-opciones {
+  border-radius: 15px;
+  background-color: #DDD;
+  width: 80vw;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu-boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #003B32;
+  color: white;
+  padding: 1.5rem;  
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

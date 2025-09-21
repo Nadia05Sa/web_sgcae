@@ -7,6 +7,7 @@ import '../../styles/DashboardRecepcion.css';
 import fondo from '../../assets/FondoDos.png';
 import logo from '../../assets/social-justice.png';
 import { FaSearch } from 'react-icons/fa';
+import HeaderRecepcion from './HeaderRecepcion';
 
 const DashboardRecepcion = () => {
   const navigate = useNavigate();
@@ -24,20 +25,15 @@ const DashboardRecepcion = () => {
   ];
 
   return (
-    <div className="dashboard-recepcion" style={{ backgroundImage: `url(${fondo})` }}>
-      <header className="header">
-        <img src={logo} alt="Logo" className="logo-icon" />
-        <nav className="nav-bar">
-          <button className="nav-btn active">Home</button>
-          <button className="nav-btn" onClick={() => navigate('/menu')}>Menu</button>
-          <button className="nav-btn" onClick={() => navigate('/notificaciones')}>Notificaciones</button>
-        </nav>
+    <div>
+
+      <div className="search-container">
         <div className="search-box">
           <FaSearch className="search-icon" />
           <input type="text" placeholder="Buscar" />
           <button className="search-button">Buscar</button>
         </div>
-      </header>
+      </div>
 
       <main className="calendar-section">
         <FullCalendar

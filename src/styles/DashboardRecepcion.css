@@ -1,23 +1,24 @@
 .dashboard-recepcion {
+  min-width: 600px;
   height: 100vh;
-  width: 100vw;
-  background-size: cover;
+  width: 100%;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+/*Estilos para el header*/
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: transparent;
   color: white;
-  padding: 0.5rem 1rem;
+  gap:2rem;
 }
 
 .logo-icon {
-  width: 30px;
-  height: 30px;
+  margin-left: 1rem;
+  height: 8vh;
 }
 
 .nav-bar {
@@ -30,58 +31,61 @@
   border: none;
   color: white;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  height: 9vh;  
+  padding-block: 4.8vh;  
+  padding-inline:  15px;
 }
 
 .nav-btn.active {
-  font-weight: bold;
-  text-decoration: underline;
+  color: rgb(162, 41, 41);
+  border-bottom: 3px solid rgb(162, 41, 41);
+}
+
+/*Estilos para la barra de busqueda*/
+.search-container{
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
 }
 
 .search-box {
-  position: absolute;
-  top: 90px; /* baja el buscador debajo del header */
-  right: 1rem;
   background-color: white;
-  padding: 0.2rem 0.5rem;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  z-index: 10;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .search-icon {
   color: black;
-  margin-right: 0.3rem;
+  padding-inline: 1rem;
 }
 
 .search-box input {
   border: none;
   outline: none;
   padding: 0.3rem;
-  width: 150px;
+  width: 30vw;
 }
 
 .search-button {
   background-color: #681A37;
   color: white;
   border: none;
-  padding: 0.3rem 0.7rem;
-  border-radius: 6px;
-  margin-left: 0.5rem;
+  padding: .5rem;
+  border-radius: 0px 6px 6px 0px;
   cursor: pointer;
   font-weight: bold;
 }
 
+/*Estilos para el calendario*/
 .calendar-section {
+  padding-inline: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(168vh - 600px);
-  padding: 2rem;
-  margin-top: 3.5rem;
 }
 
 .calendar-img {
@@ -97,6 +101,6 @@
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  max-width: 600px;
   width: 100%;
+  max-height: 75vh;
 }
