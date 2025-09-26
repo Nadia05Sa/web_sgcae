@@ -1,0 +1,106 @@
+.dashboard-container {
+  min-width: 600px;
+  height: 100vh;
+  width: 100%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*Estilos para el header*/
+.header {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  gap:2rem;
+}
+
+.logo-icon {
+  margin-left: 1rem;
+  height: 8vh;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  height: 9vh;  
+  padding-block: 4.8vh;  
+  padding-inline:  15px;
+}
+
+.nav-btn.active {
+  color: rgb(162, 41, 41);
+  border-bottom: 3px solid rgb(162, 41, 41);
+}
+
+/*Estilos para la barra de busqueda*/
+.search-container{
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.search-box {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.search-icon {
+  color: black;
+  padding-inline: 1rem;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 0.3rem;
+  width: 30vw;
+}
+
+.search-button {
+  background-color: #681A37;
+  color: white;
+  border: none;
+  padding: .5rem;
+  border-radius: 0px 6px 6px 0px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*Estilos para el calendario*/
+.calendar-section {
+  padding-inline: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-img {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* FullCalendar override for better display */
+.fc {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-height: 75vh;
+}

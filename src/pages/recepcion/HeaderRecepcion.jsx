@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../../styles/DashboardRecepcion.css';
+import '../../styles/Dashboard.css';
 import fondo from '../../assets/FondoDos.png';
 import logo from '../../assets/social-justice.png';
 import Dashboard from './DashboardRecepcion';
 import MenuRecepcion from './MenuRecepcion';
-import NotificacionesRecepcion from './NotificacionesRecepcion';
-import ModalNotificaciones from './ModalNotificaciones';
+import NotificacionesRecepcion from '../notificaciones/NotificacionesRecepcion';
+import ModalNotificaciones from '../notificaciones/ModalNotificaciones';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Menu } from '@mui/material';
 
 const HeaderRecepcion = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const [active, SetActive] = useState(true);
     const [notificaciones, SetNotificaciones] = useState(false);
@@ -31,7 +30,7 @@ const HeaderRecepcion = () => {
     }, [active]);
     
     return (
-        <div className="dashboard-recepcion" style={{ backgroundImage: `url(${fondo})` }}>
+        <div className="dashboard-container" style={{ backgroundImage: `url(${fondo})` }}>
             <header className="header">
                 <img src={logo} alt="Logo" className="logo-icon" />
                 <nav className="nav-bar">

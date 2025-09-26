@@ -1,16 +1,12 @@
-import { useNavigate } from 'react-router-dom';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import '../../styles/DashboardRecepcion.css';
-import fondo from '../../assets/FondoDos.png';
-import logo from '../../assets/social-justice.png';
+import '../../styles/Dashboard.css';
 import { FaSearch } from 'react-icons/fa';
 import HeaderRecepcion from './HeaderRecepcion';
 
 const DashboardRecepcion = () => {
-  const navigate = useNavigate();
 
   const eventos = [
     {

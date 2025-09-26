@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../../styles/MenuRecepcion.css';
+//import { useEffect, useState } from 'react';
+//import { useNavigate } from 'react-router-dom';
+import '../../styles/Menu.css';
 import SettingsIcon from '@mui/icons-material/Settings';
 import FeedIcon from '@mui/icons-material/Feed';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -12,7 +12,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const MenuRecepcion = () => {
 
     return (
-        <div className='menu-recepcion'>
+        <div className='menu-container'>
             <div className='menu-conteiner-titulo'>
                 <SettingsIcon sx={{ fontSize: 40, color: 'white' }} />
                 <h1 className='menu-titulo'>Configuraciones</h1>
