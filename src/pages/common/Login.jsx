@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/social-justice.png';
 import '../../styles/Login.css';
+import {authService} from "../../service/AuthService.jsx";
 
 const Login = () => {
   const [correo, setCorreo] = useState('');
@@ -16,6 +17,8 @@ const Login = () => {
       setError('Por favor completa todos los campos');
       return;
     }
+
+    authService.login(correo,contrasena)
 
     if (correo === 'admin@gmail.com') {
       navigate('/dashboard-admin');

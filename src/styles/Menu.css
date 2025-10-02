@@ -4,12 +4,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.5rem;
 }
 
 .menu-conteiner-titulo {
-  border-radius: 15px;
-  padding: 1rem;
+  border-radius: 15px 15px 0 0;
+  padding: 0.5rem;
   width: 30vw;
   display: flex;
   text-align: center;
@@ -23,7 +22,7 @@
 }
 
 .menu-container-opciones {
-  border-radius: 15px;
+  border-radius: 0 15px 15px 15px;
   background-color: #DDD;
   width: 80vw;
   padding: 2rem;
