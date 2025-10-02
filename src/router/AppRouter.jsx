@@ -1,4 +1,7 @@
+import '../styles/Dashboard.css';
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { authService } from "../service/AuthService.jsx";
+import fondo from '../assets/FondoDos.png';
 
 import Header from '../pages/common/Header.jsx'
 import SplashScreen from '../pages/common/SplashScreen';
@@ -7,10 +10,15 @@ import DashboardAdmin from '../pages/admin/DashboardAdmin';
 import DashboardRecepcion from '../pages/recepcion/DashboardRecepcion.jsx';
 import MenuAdmin from '../pages/admin/MenuAdmin.jsx';
 import MenuRecepcion from '../pages/recepcion/MenuRecepcion.jsx';
-import { useEffect } from "react";
-import { authService } from "../service/AuthService.jsx";
-import '../styles/Dashboard.css';
-import fondo from '../assets/FondoDos.png';
+import Perfil from "../pages/recepcion/formulario/Perfil.jsx";
+import CitasAprobadas from "../pages/recepcion/citas/CitasAprobadas.jsx";
+import CitasDatosPersona from "../pages/recepcion/citas/CitasDatosPersona.jsx";
+import ReporteSem from "../pages/recepcion/reportes/ReporteSem.jsx";
+import Apoyos from "../pages/recepcion/historial/Apoyos.jsx";
+import ApoyosDatosPersona from "../pages/recepcion/historial/ApoyosDatosPersona.jsx";
+import Historial from "../pages/recepcion/afiliaciones/Historial.jsx";
+import RegistrarPerfil from "../pages/recepcion/afiliaciones/RegistrarPerfil.jsx";
+
 // Para las rutas protegidas dependiedo del rol:)
 // Componente de ruta protegida por rol
 function ProtectedRoute({ children, allowedRoles }) {
@@ -53,7 +61,7 @@ function MainLayout() {
         : { height: '100%' };
 
     return (
-        <div className={showSidebar && "dashboard-container"} style={mainStyle}>
+        <div className={showSidebar ? "dashboard-container" : ""} style={mainStyle}>
             {showSidebar && <Header />}
             <div>
                 <Routes>
@@ -76,9 +84,48 @@ function MainLayout() {
                         <ProtectedRoute allowedRoles={['RECEPCION']} ><DashboardRecepcion /></ProtectedRoute>
                     } >
                     </Route>
+
                     <Route path="/menu-recepcion" element={
                         <ProtectedRoute allowedRoles={['RECEPCION']} ><MenuRecepcion /></ProtectedRoute>
                     } >
+                        //Formulario
+                        <Route path="formulario" element={
+                            <ProtectedRoute allowedRoles={['RECEPCION']} ><Perfil /></ProtectedRoute>
+                        } >
+                        </Route>
+                        //Citas
+                        <Route path="citas" element={
+                            <ProtectedRoute allowedRoles={['RECEPCION']} ><CitasAprobadas /></ProtectedRoute>
+                        } >
+                            <Route path="datos" element={
+                                <ProtectedRoute allowedRoles={['RECEPCION']} ><CitasDatosPersona /></ProtectedRoute>
+                            } >
+                            </Route>
+                        </Route>
+                        //Reportes
+                        <Route path="reportes" element={
+                            <ProtectedRoute allowedRoles={['RECEPCION']} ><ReporteSem /></ProtectedRoute>
+                        } >
+                        </Route>
+                        //Historial
+                        <Route path="historial" element={
+                            <ProtectedRoute allowedRoles={['RECEPCION']} ><Apoyos /></ProtectedRoute>
+                        } >
+                            <Route path="datos" element={
+                                <ProtectedRoute allowedRoles={['RECEPCION']} ><ApoyosDatosPersona /></ProtectedRoute>
+                            } >
+                            </Route>
+                        </Route>
+                        //Afiliaciones
+                        <Route path="afiliaciones" element={
+                            <ProtectedRoute allowedRoles={['RECEPCION']} ><Historial /></ProtectedRoute>
+                        } >
+                            <Route path="datos" element={
+                                <ProtectedRoute allowedRoles={['RECEPCION']} ><RegistrarPerfil /></ProtectedRoute>
+                            } >
+                            </Route>
+                        </Route>
+
                     </Route>
 
 
