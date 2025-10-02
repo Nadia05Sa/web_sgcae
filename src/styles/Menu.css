@@ -25,6 +25,7 @@
 .menu-container-opciones {
   border-radius: 0 15px 15px 15px;
   background-color: #DDD;
+  min-width: 800px;
   width: 80vw;
   padding: 2rem;
   display: grid;

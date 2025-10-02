@@ -18,6 +18,15 @@ import Apoyos from "../pages/recepcion/historial/Apoyos.jsx";
 import ApoyosDatosPersona from "../pages/recepcion/historial/ApoyosDatosPersona.jsx";
 import Historial from "../pages/recepcion/afiliaciones/Historial.jsx";
 import RegistrarPerfil from "../pages/recepcion/afiliaciones/RegistrarPerfil.jsx";
+import ReporteSemanales from '../pages/admin/reportes/ReporteSemanal.jsx';
+import Aprobadas from '../pages/admin/citas/Aprobadas.jsx';
+import CitasVerDatos from '../pages/admin/citas/CitasVerDatos.jsx';
+import CitasEditarDatos from '../pages/admin/citas/CitasEditarDatos.jsx';
+import CitasPdf from '../pages/admin/pdf/CitasPdf.jsx';
+import DatosCita from '../pages/admin/pdf/DatosCita.jsx';
+import HistorialDeApoyos from '../pages/admin/historial/HistorialDeApoyos.jsx';
+import Secciones from '../pages/admin/secciones/Secciones.jsx';
+import AgregarSeccion from '../pages/admin/secciones/AgregarSeccion.jsx';
 
 // Para las rutas protegidas dependiedo del rol:)
 // Componente de ruta protegida por rol
@@ -75,9 +84,60 @@ function MainLayout() {
                     <Route path="/dashboard-admin" element={
                         <ProtectedRoute allowedRoles={['ADMIN']}><DashboardAdmin /></ProtectedRoute>
                     } />
+
                     <Route path="/menu-admin" element={
                         <ProtectedRoute allowedRoles={['ADMIN']} ><MenuAdmin /></ProtectedRoute>
-                    } />
+                    } >
+                        {/* Reportes */}
+                        <Route path="reportes" element={
+                            <ProtectedRoute allowedRoles={['ADMIN']} ><ReporteSemanales /></ProtectedRoute>
+                        } >
+                        </Route>
+
+                        {/* Citas */}
+                        <Route path="citas" element={
+                            <ProtectedRoute allowedRoles={['ADMIN']} ><Aprobadas /></ProtectedRoute>
+                        } >
+                            {/* ver */}
+                            <Route path="ver" element={
+                                <ProtectedRoute allowedRoles={['ADMIN']} ><CitasVerDatos /></ProtectedRoute>
+                            } >
+                            </Route>
+                            {/* editar */}
+                            <Route path="editar" element={
+                                <ProtectedRoute allowedRoles={['ADMIN']} ><CitasEditarDatos /></ProtectedRoute>
+                            } >
+                            </Route>
+                        </Route>
+
+                        {/* PDF */}
+                        <Route path="pdf" element={
+                            <ProtectedRoute allowedRoles={['ADMIN']} ><CitasPdf /></ProtectedRoute>
+                        } >
+                            {/* datos */}
+                            <Route path="datos" element={
+                                <ProtectedRoute allowedRoles={['ADMIN']} ><DatosCita /></ProtectedRoute>
+                            } >
+                            </Route>
+                        </Route>
+
+                        {/* Historial */}
+                        <Route path="historial" element={
+                            <ProtectedRoute allowedRoles={['ADMIN']} ><HistorialDeApoyos /></ProtectedRoute>
+                        } >
+                        </Route>
+
+                        {/* Secciones */}
+                        <Route path="secciones" element={
+                            <ProtectedRoute allowedRoles={['ADMIN']} ><Secciones /></ProtectedRoute>
+                        } >
+                            {/* agregar */}
+                            <Route path="reportes" element={
+                                <ProtectedRoute allowedRoles={['ADMIN']} ><AgregarSeccion /></ProtectedRoute>
+                            } >
+                            </Route>
+                        </Route>
+                    </Route>
 
                     {/* Rutas solo para recepcion */}
                     <Route path="/dashboard-recepcion" element={
@@ -88,12 +148,13 @@ function MainLayout() {
                     <Route path="/menu-recepcion" element={
                         <ProtectedRoute allowedRoles={['RECEPCION']} ><MenuRecepcion /></ProtectedRoute>
                     } >
-                        //Formulario
+
+                        {/* Formulario */}
                         <Route path="formulario" element={
                             <ProtectedRoute allowedRoles={['RECEPCION']} ><Perfil /></ProtectedRoute>
                         } >
                         </Route>
-                        //Citas
+                        {/* Citas */}
                         <Route path="citas" element={
                             <ProtectedRoute allowedRoles={['RECEPCION']} ><CitasAprobadas /></ProtectedRoute>
                         } >
@@ -102,12 +163,12 @@ function MainLayout() {
                             } >
                             </Route>
                         </Route>
-                        //Reportes
+                        {/* Reportes */}
                         <Route path="reportes" element={
                             <ProtectedRoute allowedRoles={['RECEPCION']} ><ReporteSem /></ProtectedRoute>
                         } >
                         </Route>
-                        //Historial
+                        {/* Historial */}
                         <Route path="historial" element={
                             <ProtectedRoute allowedRoles={['RECEPCION']} ><Apoyos /></ProtectedRoute>
                         } >
@@ -116,7 +177,7 @@ function MainLayout() {
                             } >
                             </Route>
                         </Route>
-                        //Afiliaciones
+                        {/* Afiliaciones */}
                         <Route path="afiliaciones" element={
                             <ProtectedRoute allowedRoles={['RECEPCION']} ><Historial /></ProtectedRoute>
                         } >

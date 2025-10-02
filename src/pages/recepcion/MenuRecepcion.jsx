@@ -13,6 +13,14 @@ const MenuRecepcion = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    const opciones = [
+        { icon: <FeedIcon sx={{ fontSize: 40, color: 'white' }} />, label: 'Formulario', path: 'formulario' },
+        { icon: <CalendarMonthIcon sx={{ fontSize: 40, color: 'white' }} />, label: 'Citas', path: 'citas' },
+        { icon: <InsertDriveFileIcon style={{ fontSize: 40, color: 'white' }} />, label: 'Reportes', path: 'reportes' },
+        { icon: <HistoryIcon sx={{ fontSize: 40, color: 'white' }} />, label: 'Historial', path: 'historial' },
+        { icon: <AssignmentIndIcon sx={{ fontSize: 40, color: 'white' }} />, label: 'Afiliaciones', path: 'afiliaciones' },
+    ];
+
     if (location.pathname.includes('formulario') || location.pathname.includes('citas') || location.pathname.includes('reportes') || location.pathname.includes('historial') || location.pathname.includes('afiliaciones')) {
         return <Outlet />;
     }
@@ -24,32 +32,18 @@ const MenuRecepcion = () => {
                     <h1 className='menu-titulo'>Configuraciones</h1>
                 </div>
                 <div className='menu-container-opciones'>
-
-                    <button className='menu-boton' onClick={() => navigate('formulario')}>
-                        <FeedIcon sx={{ fontSize: 40, color: 'white' }} />
-                        <h2>Formulario</h2>
-                        <ArrowForwardIcon sx={{ fontSize: 50, color: 'white' }} />
-                    </button>
-                    <button className='menu-boton' onClick={() => navigate('citas')}>
-                        <CalendarMonthIcon sx={{ fontSize: 40, color: 'white' }} />
-                        <h2>Citas</h2>
-                        <ArrowForwardIcon sx={{ fontSize: 50, color: 'white' }} />
-                    </button>
-                    <button className='menu-boton' onClick={() => navigate('reportes')}>
-                        <InsertDriveFileIcon sx={{ fontSize: 40, color: 'white' }} />
-                        <h2>Reportes</h2>
-                        <ArrowForwardIcon sx={{ fontSize: 50, color: 'white' }} />
-                    </button>
-                    <button className='menu-boton' onClick={() => navigate('historial')}>
-                        <HistoryIcon sx={{ fontSize: 40, color: 'white' }} />
-                        <h2>Historial</h2>
-                        <ArrowForwardIcon sx={{ fontSize: 50, color: 'white' }} />
-                    </button>
-                    <button className='menu-boton' onClick={() => navigate('afiliaciones')}>
-                        <AssignmentIndIcon sx={{ fontSize: 40, color: 'white' }} />
-                        <h2>Afiliaciones</h2>
-                        <ArrowForwardIcon sx={{ fontSize: 50, color: 'white' }} />
-                    </button>
+                    {opciones.map((opcion, index) => (
+                        <button
+                            key={index}
+                            className="menu-boton"
+                            onClick={() => navigate(opcion.path)}
+                            aria-label={opcion.label}
+                        >
+                            {opcion.icon}
+                            <h2>{opcion.label}</h2>
+                            <ArrowForwardIcon sx={{ fontSize: 50, color: 'white' }} />
+                        </button>
+                    ))}
                 </div>
             </div>
             <Outlet />
