@@ -4,7 +4,6 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import '../../styles/Dashboard.css';
 import { FaSearch } from 'react-icons/fa';
-import HeaderRecepcion from './HeaderRecepcion';
 
 const DashboardRecepcion = () => {
 

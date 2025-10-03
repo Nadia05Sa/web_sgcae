@@ -15,6 +15,7 @@ const HistorialDeApoyos = () => {
                 </div>
 
                 <div className="menu-container-opciones">
+                    
                 </div>
             </div>
 
